@@ -38,3 +38,6 @@ q.was_published_recently()
 `python manage.py createsuperuser`
 
 
+# Rest framework 사용
+- https://www.django-rest-framework.org/tutorial/quickstart
+- 위 url로 접속하여 기본 튜토리얼 따라해보기
