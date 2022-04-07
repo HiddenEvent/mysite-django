@@ -47,9 +47,16 @@ def order(request):
     if request.method == 'POST':
         address = request.POST['address']
         shop = request.POST['shop']
+        food_list = request.POST.getlist('menu')
         order_date = timezone.now()
         shop_item = Shop.objects.get(pk=int(shop))
         shop_item.order_set.create(address=address, order_date=order_date, shop=int(shop))
+
+        # 푸드 List insert
+        order_item = Order.objects.get(pk=shop_item.order_set.latest('id').id)
+        for food in food_list:
+            order_item.orderfood_set.create(food_name=food)
+
         return HttpResponse(status=200)
     elif request.method == 'GET':
         order_list = Order.objects.all()
