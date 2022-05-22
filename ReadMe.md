@@ -45,3 +45,18 @@ q.was_published_recently()
 # Rest framework 사용
 - https://www.django-rest-framework.org/tutorial/quickstart
 - 위 url로 접속하여 기본 튜토리얼 따라해보기
+
+
+# 배달기사(delivery) 기본
+## 프로젝트 생성 및 루트연결
+```
+# 1. app 생성
+python manage.py startapp delivery
+# 2. root프로젝트(mysite) -> urls.py 파일에 입력
+path('delivery/', include('delivery.urls')),
+# 3. root프로젝트(mysite) -> settings 파일에 입력
+INSTALLED_APPS = ['delivery'] 
+``` 
+## 프로젝트 세팅
+1. urls.py 생성
+2. views.py 생성
