@@ -16,6 +16,7 @@ python manage.py shell
 
 ## 종료
 exit()
+
 ## sqllite DB 제어 사용방법
 ```shell
 # 데이터 insert 
@@ -33,7 +34,10 @@ q = Question.objects.get(pk=1)
 q.was_published_recently()
 ```
 
-# 관리자 기본
+# 클라이언트(order) 기본
+- `template`: html 등 화면 관련된 폴더
+
+# 관리자(boss) 기본
 ## 프로젝트 생성
 `python manage.py createsuperuser`
 
